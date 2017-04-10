@@ -16,6 +16,10 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5b40829c62bfb0ceb0635b7f3549d69ca4ee65d3
 # Created by https://www.gitignore.io/api/visualstudiocode
 
 ### VisualStudioCode ###
