@@ -3,9 +3,7 @@ import axios from 'axios';
 import './Contact.css';
 
 export default class Contact extends Component {
-    constructor() {
-        super()
-    }
+
     render() {
         return (
             <div className="well">

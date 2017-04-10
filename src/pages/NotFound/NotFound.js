@@ -3,9 +3,7 @@ import axios from 'axios';
 import './NotFound.css';
 
 export default class NotFound extends Component {
-    constructor() {
-        super()
-    }
+
     render() {
         return (
             <div className="well">

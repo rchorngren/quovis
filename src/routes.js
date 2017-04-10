@@ -1,9 +1,9 @@
 import React from 'react';
 import { Router, Route } from 'react-router';
 
-import App from './App.js';
-import Contact from './pages/Contact/Contact.js';
-import NotFound from './pages/NotFound/NotFound.js';
+import App from './App';
+import Contact from './pages/Contact/Contact';
+import NotFound from './pages/NotFound/NotFound';
 
 const Routes = (props) => (
     <Router {...props}>
@@ -13,5 +13,4 @@ const Routes = (props) => (
         </Route>
     </Router>
 );
-
 export default Routes;
