@@ -13,7 +13,7 @@ export default class App extends Component {
             <Link to="/">Home</Link>
             <Link to="/contact">Contact</Link>
             <Link to="/asdf">Bad link</Link>
-          {this.props.children}
+          {this.props.children} 
         </div>
         );
     }
