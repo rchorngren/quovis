@@ -4,13 +4,8 @@ import './App.css';
 import { Link } from 'react-router';
 import Login from './Login.js';
 
+
 export default class App extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      showUser: []
-    };
-  }
 
   render() {
 
@@ -18,7 +13,8 @@ export default class App extends Component {
       <div>
         <h3>Quovis</h3>
         <Login />
-        <Link to="signuplink" className="signin">/Registrera</Link>
+        <Link to="signuplink" className="signin">Registrera</Link>
+
         <hr className="hr" />
         <div className="navbar">
           <Link to="/" className="linkies">Hem</Link>
@@ -27,6 +23,7 @@ export default class App extends Component {
           <hr />
         </div>
         {this.props.children}
+
       </div>
     );
   };
