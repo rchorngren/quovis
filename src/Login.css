@@ -1,0 +1,32 @@
+
+
+.login-background {
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.buto {
+background: none;
+color: inherit;
+border: none;
+padding: 0;
+font: inherit;
+cursor: pointer;
+color: #91c46c;
+
+}
+
+.buto:focus {
+outline: 0;
+}
+
+.buto:hover{
+    color: #297d7d;
+}
