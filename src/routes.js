@@ -1,13 +1,14 @@
 import React from 'react';
-import { Router, Route } from 'react-router';
-
+import { Router, Route, IndexRoute } from 'react-router';
 import App from './App';
+import Home from './pages/Home/Home';
 import Contact from './pages/Contact/Contact';
 import NotFound from './pages/NotFound/NotFound';
 
 const Routes = (props) => (
     <Router {...props}>
         <Route path="/" component={App}>
+            <IndexRoute component={Home} />
             <Route path="/contact" component={Contact} />
             <Route path="*" component={NotFound} />
         </Route>

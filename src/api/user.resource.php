@@ -2,7 +2,7 @@
 #
 # Den här klassen ska köras om vi anropat resursen user i vårt API genom /?/user
 #
-class _users extends Resource{ // Klassen ärver egenskaper från den generella klassen Resource som finns i resource.class.php
+class _user extends Resource{ // Klassen ärver egenskaper från den generella klassen Resource som finns i resource.class.php
     # Här deklareras de variabler/members som objektet ska ha
     public $user_name, $user_id, $user_password, $users, $request;
     # Här skapas konstruktorn som körs när objektet skapas
@@ -44,6 +44,7 @@ class _users extends Resource{ // Klassen ärver egenskaper från den generella 
             $result = mysqli_query($db, $query);
             $user = mysqli_fetch_assoc($result);
             $this->user_name = $user['user_name'];
+            $this->user_password = $user['user_password'];
             
         }else{ // om vår URL inte innehåller ett ID hämtas alla users
             $query = "SELECT *
