@@ -9,19 +9,18 @@ export default class App extends Component {
 
   render() {
         return (
-          <div className="well">
-            <Link to="/">Home</Link>
-            <Link to="/contact">Contact</Link>
-            <Link to="/asdf">Bad link</Link>
+        <div>
+          <h3>Quovis</h3>
+          <Link to="futurelink" className="signin">Logga in / Registrera</Link>
+          <hr className="hr"/>
+          <div className="navbar">
+            <Link to="/" className="linkies">Hem</Link>
+            <Link to="/contact" className="linkies">Kontakt</Link>
+            <Link to="/asdf" className="linkies">Bad link</Link>
+            <hr />
+            </div>
           {this.props.children} 
         </div>
         );
-    }
-}
-
-
-
-
-
-
-
+    };
+};
