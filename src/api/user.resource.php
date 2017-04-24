@@ -61,12 +61,12 @@ class _user extends Resource{ // Klassen ärver egenskaper från den generella k
     # Denna funktion körs om vi anropat resursen genom HTTP-metoden POST
     function POST($input, $db){
         # I denna funktion skapar vi en ny user med den input vi fått
-        $this->user_name = escape($input['user_name']);
-        $this->user_password = escape($input['user_password']);
+        $user_name = escape($input->user_name);
+        $user_password = escape($input->user_password);
         
         $query = "INSERT INTO users
         (user_name, user_password)
-        VALUES ('$this->user_name', '$this->user_password')";
+        VALUES ('$user_name', '$user_password')";
         
         mysqli_query($db, $query);
     }
@@ -75,12 +75,12 @@ class _user extends Resource{ // Klassen ärver egenskaper från den generella k
         # I denna funktion uppdateras en specifik user med den input vi fått
         # Observera att allt uppdaterad varje gång och att denna borde byggas om så att bara det vi skickar med uppdateras
         if($this->user_id){
-            $this->user_name = escape($input['user_name']);
-            $this->user_password = escape($input['user_password']);
+            $user_name = escape($input->user_name);
+            $user_password = escape($input->user_password);
             
             $query = "
             UPDATE users
-            SET user_name = '$this->user_name', user_password = '$this->user_password'
+            SET user_name = '$user_name', user_password = '$user_password'
             WHERE user_id = $this->user_id
             ";
             mysqli_query($db, $query);
