@@ -23,7 +23,6 @@ export default class App extends Component {
           <hr />
         </div>
         {this.props.children}
-
       </div>
     );
   };
