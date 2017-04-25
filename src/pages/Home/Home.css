@@ -1,0 +1,27 @@
+
+.starttext{
+    margin-top: 70px;
+    float:left;
+}
+.startimg {
+    width: 450px;
+    height: 300px;
+    margin-top: -4%;
+}
+.headline {
+    margin-top: 30px;
+}
+h2{
+    margin-left: 20px;
+    color: #4a4c4a;
+}
+.col-xs-6 {
+    float:right;
+}
+.popc, .pop{
+    margin-left: 10%;
+    margin-bottom: 2%;
+}
+.col-xs-6.start {
+    
+}
