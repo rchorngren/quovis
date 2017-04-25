@@ -2,7 +2,7 @@
 #
 # Den här klassen ska köras om vi anropat resursen user i vårt API genom /?/user
 #
-class _users extends Resource{ // Klassen ärver egenskaper från den generella klassen Resource som finns i resource.class.php
+class _user extends Resource{ // Klassen ärver egenskaper från den generella klassen Resource som finns i resource.class.php
     # Här deklareras de variabler/members som objektet ska ha
     public $user_name, $user_id, $user_password, $users, $request;
     # Här skapas konstruktorn som körs när objektet skapas
@@ -44,6 +44,7 @@ class _users extends Resource{ // Klassen ärver egenskaper från den generella 
             $result = mysqli_query($db, $query);
             $user = mysqli_fetch_assoc($result);
             $this->user_name = $user['user_name'];
+            $this->user_password = $user['user_password'];
             
         }else{ // om vår URL inte innehåller ett ID hämtas alla users
             $query = "SELECT *
@@ -60,12 +61,12 @@ class _users extends Resource{ // Klassen ärver egenskaper från den generella 
     # Denna funktion körs om vi anropat resursen genom HTTP-metoden POST
     function POST($input, $db){
         # I denna funktion skapar vi en ny user med den input vi fått
-        $this->user_name = escape($input['user_name']);
-        $this->user_password = escape($input['user_password']);
+        $user_name = escape($input->user_name);
+        $user_password = escape($input->user_password);
         
         $query = "INSERT INTO users
         (user_name, user_password)
-        VALUES ('$this->user_name', '$this->user_password')";
+        VALUES ('$user_name', '$user_password')";
         
         mysqli_query($db, $query);
     }
@@ -74,12 +75,12 @@ class _users extends Resource{ // Klassen ärver egenskaper från den generella 
         # I denna funktion uppdateras en specifik user med den input vi fått
         # Observera att allt uppdaterad varje gång och att denna borde byggas om så att bara det vi skickar med uppdateras
         if($this->user_id){
-            $this->user_name = escape($input['user_name']);
-            $this->user_password = escape($input['user_password']);
+            $user_name = escape($input->user_name);
+            $user_password = escape($input->user_password);
             
             $query = "
             UPDATE users
-            SET user_name = '$this->user_name', user_password = '$this->user_password'
+            SET user_name = '$user_name', user_password = '$user_password'
             WHERE user_id = $this->user_id
             ";
             mysqli_query($db, $query);
