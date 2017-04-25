@@ -13,7 +13,7 @@ export default class Login extends Component {
             loggedIn: false,
             loginFail: ''
         };
-        this.login = this.login.bind(this);
+        this.Login = this.Login.bind(this);
         this.displayLogin = this.displayLogin.bind(this);
         this.logout = this.logout.bind(this);
     }
@@ -24,7 +24,7 @@ export default class Login extends Component {
         this.setState({ showLogin: !this.state.showLogin });
     }
 
-    login(e) {
+    Login(e) {
         e.preventDefault();
         var username = this.inputName.value;
         var password = this.inputPassword.value;
@@ -63,6 +63,7 @@ export default class Login extends Component {
             });
         });
     }
+    
     render() {
         var display = this.state.showLogin ? 'block' : 'none';
         var style = { display: display };
