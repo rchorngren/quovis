@@ -22,16 +22,7 @@ export default class Home extends Component {
                      Excepteur sint occaecat cupidatat non proident, sunt in
                      culpa qui officia deserunt mollit anim id est laborum."
                       nostrud exercitation ullamco laboris nisi ut aliquip"</p>
-<<<<<<< HEAD
-                     <img src= {require("./testp.png")} className="startimg img-responsive"/>
-                </div>
-                <div className="col-xs-6">
-                    <h4 className="pop">Populära kurser just nu</h4>
-                    <img src= {require("./js.png")} width="250" height="250" className="popc img-responsive" /><br />
-                    <img src= {require("./css.png")} width="250" height="250" className="popc img-responsive"/><br />
-                    <img src= {require("./php.png")} width="250" height="250" className="popc img-responsive"/>
-                     </div>
-=======
+
                     <img src={require("./testp.png")} className="startimg" />
                 </div>
                 <div className="col-xs-6">
@@ -40,7 +31,6 @@ export default class Home extends Component {
                     <img src={require("./css.png")} width="250" height="250" className="popc" /><br />
                     <img src={require("./php.png")} width="250" height="250" className="popc" />
                 </div>
->>>>>>> origin/master
             </div>
         );
     }

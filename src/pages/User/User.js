@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import './Contact.css';
+import './User.css';
 
-export default class Contact extends Component {
+export default class User extends Component {
 
     render() {
         return (
             <div className="">
-                <h1>Contact page</h1>
+                <h2>Mina sidor</h2>
+                
             </div>
         );
     }

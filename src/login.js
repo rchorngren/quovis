@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './Login.css';
-
+import { Link } from 'react-router';
 
 
 export default class Login extends Component {
@@ -53,7 +53,7 @@ export default class Login extends Component {
                         <form action="">
                             <input ref={node => this.inputName = node} />
                             <input ref={node => this.inputPassword = node} />
-                            <button onClick={this.login}>logga in</button>
+                            <button><Link to="/user">logga in</Link></button>
                             <button onClick={this.displayLogin}>Avbryt</button>
                         </form>
                     </div>
