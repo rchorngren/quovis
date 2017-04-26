@@ -44,14 +44,15 @@ export default class Register extends Component {
             <div>
                 <button className='login-btn' onClick={this.displayRegister}>Registrera</button>
                 <div className='register-background' style={style}>
-                    <div className='register-container well' style={style}>
+                    <div className='register-container form-control' style={style}>
                         <form action="">
-                            <input ref={node => this.inputName = node} placeholder="Användarnamn" />
-                            <input ref={node => this.inputPassword = node} placeholder="Lösenord"/>
-                            {/*<input ref={node => this.inputConfirmPass = node} placeholder="Bekräfta lösenord"/>*/}
-                            <input ref={node => this.inputMail = node} placeholder="E-mailadress"/>
-                            <button onClick={this.register}>Registrera ny användare</button>
-                            <button onClick={this.displayRegister}>Avbryt</button>
+                            <button className="btn btn-danger" onClick={this.displayRegister}>x</button>
+                            <h2>Ny användare</h2>
+                            <input ref={node => this.inputName = node} placeholder="Användarnamn" className="form-control top" /><br/>
+                            <input ref={node => this.inputPassword = node} placeholder="Lösenord" className="form-control"/><br/>
+                            {/*<input ref={node => this.inputConfirmPass = node} placeholder="Bekräfta lösenord"/><br/>*/}
+                            <input ref={node => this.inputMail = node} placeholder="E-mailadress" className="form-control"/><br/>
+                            <button className="btn btn-success" onClick={this.register}>Registrera ny användare</button>
                         </form>
                     </div>
                 </div>
