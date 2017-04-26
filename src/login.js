@@ -10,7 +10,7 @@ export default class Login extends Component {
         this.state = {
             showLogin: false
         };
-        this.login = this.login.bind(this);
+        this.Login = this.Login.bind(this);
         this.displayLogin = this.displayLogin.bind(this);
     }
 
@@ -20,7 +20,7 @@ export default class Login extends Component {
         this.setState({ showLogin: !this.state.showLogin });
     }
 
-    login(e) {
+    Login(e) {
         e.preventDefault();
         var username = this.inputName.value;
         var password = this.inputPassword.value;
@@ -41,6 +41,7 @@ export default class Login extends Component {
         });
 
     }
+    
     render() {
         var display = this.state.showLogin ? 'block' : 'none';
         var style = { display: display };
