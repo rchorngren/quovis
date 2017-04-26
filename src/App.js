@@ -3,11 +3,7 @@ import axios from 'axios';
 import './App.css';
 import { Link } from 'react-router';
 import Login from './Login.js';
-<<<<<<< HEAD
-/*import User from './pages/User/User.js';*/
-=======
 import Register from './Register.js';
->>>>>>> master
 
 
 
