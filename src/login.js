@@ -82,7 +82,7 @@ export default class Login extends Component {
                 <div className='login-background' style={style}>
                     <div className='login-container form-control' style={style}>
                         <form action="">
-                             <button className="btn btn-danger" onClick={this.displayLogin}>x</button>
+                            <button className="btn btn-danger" onClick={this.displayLogin}>x</button>
                             <h2>Logga in</h2>
                             <input ref={node => this.inputName = node} className="form-control top"/> <br />
                             <input ref={node => this.inputPassword = node} className="form-control"/><br />
