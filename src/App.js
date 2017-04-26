@@ -6,6 +6,7 @@ import Login from './Login.js';
 import Register from './Register.js';
 
 
+
 export default class App extends Component {
 
   render() {
@@ -24,7 +25,6 @@ export default class App extends Component {
           <hr />
         </div>
         {this.props.children}
-
       </div>
     );
   };

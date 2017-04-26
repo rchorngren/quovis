@@ -25,9 +25,9 @@ class _login extends Resource{ // Klassen ärver egenskaper från den generella 
         /* if(isset($input['user_name'], $input['user_password'])){*/
         $user_name = escape($input->user_name);
         $user_password = escape($input->user_password);
+        /*$logout = escape($input->logout);*/
         
         
-        /*echo $this->user_name;*/
         
         $query = "SELECT * FROM users
         WHERE user_name = '$user_name'
@@ -37,12 +37,14 @@ class _login extends Resource{ // Klassen ärver egenskaper från den generella 
         
         if (mysqli_num_rows($result) == 1) {
             $user = mysqli_fetch_assoc($result);
-            $_SESSION['login_user'] = $user['user_id']; //sets the key to login_user and the value to $username
+            $_SESSION['login_user'] = $user['user_id']; //sets the key to login_user and the value to $user_id
             $this->user_name = $user['user_name'];
             $this->user_id = $user['user_id'];
         } else {
             
         }
+        
+        /* if($logout) session_destroy();*/
         
         /*$result =
         $user = mysqli_fetch_assoc($result);
