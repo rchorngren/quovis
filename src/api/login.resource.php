@@ -25,7 +25,6 @@ class _login extends Resource{ // Klassen ärver egenskaper från den generella 
         /* if(isset($input['user_name'], $input['user_password'])){*/
         $user_name = escape($input->user_name);
         $user_password = escape($input->user_password);
-        /*$logout = escape($input->logout);*/
         
         
         
@@ -43,8 +42,11 @@ class _login extends Resource{ // Klassen ärver egenskaper från den generella 
         } else {
             
         }
+        if(isset($input->logout)){
+            $logout = escape($input->logout);
+            if($logout) session_destroy();
+        }
         
-        /* if($logout) session_destroy();*/
         
         /*$result =
         $user = mysqli_fetch_assoc($result);
