@@ -80,12 +80,13 @@ export default class Login extends Component {
                 {/*<button className='login-btn' onClick={this.displayLogin}>Logga in</button>*/}
                 <div className='username'>{this.state.showUser}</div>
                 <div className='login-background' style={style}>
-                    <div className='login-container well' style={style}>
+                    <div className='login-container form-control' style={style}>
                         <form action="">
-                            <input ref={node => this.inputName = node} />
-                            <input ref={node => this.inputPassword = node} />
-                            <button onClick={this.login}>logga in</button>
-                            <button onClick={this.displayLogin}>Avbryt</button>
+                            <button className="btn btn-danger" onClick={this.displayLogin}>x</button>
+                            <h2>Logga in</h2>
+                            <input ref={node => this.inputName = node} className="form-control top"/> <br />
+                            <input ref={node => this.inputPassword = node} className="form-control"/><br />
+                            <button className="btn btn-success" onClick={this.login}>Logga in</button><br />
                         </form>
                         <span className={error}>{errorTxt}</span>
                     </div>

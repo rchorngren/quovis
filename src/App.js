@@ -3,6 +3,7 @@ import axios from 'axios';
 import './App.css';
 import { Link } from 'react-router';
 import Login from './Login.js';
+import Register from './Register.js';
 
 
 
@@ -14,7 +15,7 @@ export default class App extends Component {
       <div>
         <h3>Quovis</h3>
         <Login />
-        <Link to="signuplink" className="signin">Registrera</Link>
+        <Register />
 
         <hr className="hr" />
         <div className="navbar">

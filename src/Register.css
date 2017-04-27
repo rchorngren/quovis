@@ -1,4 +1,4 @@
-.login-background {
+.register-background {
     position: fixed;
     z-index: 1;
     padding-top: 100px;
@@ -40,9 +40,9 @@
 .username {
     color: #91c46c;
 }
-.login-container{
+.register-container{
     height: 400px;
-    width: 400px;
+    width: 750px;
     margin: 0 auto;    
 }
 input {
@@ -52,12 +52,12 @@ input.form-control{
     width: 50%;
 }
 .btn.btn-success {
-    margin-left: 25.5%;
-    width:187px; 
+    margin-left: 25%;
+    width:50%; 
 }
 .btn.btn-danger{
     margin-right: 3%;
-    margin-top:2%;
+    margin-top:1%;
 }
 input.form-control.top{
     margin-top: 5%;
