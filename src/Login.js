@@ -16,8 +16,15 @@ export default class Login extends Component {
         this.login = this.login.bind(this);
         this.displayLogin = this.displayLogin.bind(this);
         this.logout = this.logout.bind(this);
+        this.checkLogin = this.checkLogin.bind(this);
     }
 
+
+    checkLogin() {
+        axios.get('http://localhost/quovis/src/api/?/login').then((response) => {
+            console.log(response.data);
+        });
+    }
 
     displayLogin(e) {
         e.preventDefault();
@@ -78,14 +85,15 @@ export default class Login extends Component {
             <div>
                 {sessionBtn}
                 {/*<button className='login-btn' onClick={this.displayLogin}>Logga in</button>*/}
+                <button onClick={this.checkLogin}>kolla login</button>
                 <div className='username'>{this.state.showUser}</div>
                 <div className='login-background' style={style}>
                     <div className='login-container form-control' style={style}>
                         <form action="">
                             <button className="btn btn-danger" onClick={this.displayLogin}>x</button>
                             <h2>Logga in</h2>
-                            <input ref={node => this.inputName = node} className="form-control top"/> <br />
-                            <input ref={node => this.inputPassword = node} className="form-control"/><br />
+                            <input ref={node => this.inputName = node} className="form-control top" /> <br />
+                            <input ref={node => this.inputPassword = node} className="form-control" /><br />
                             <button className="btn btn-success" onClick={this.login}>Logga in</button><br />
                         </form>
                         <span className={error}>{errorTxt}</span>

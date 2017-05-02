@@ -40,7 +40,7 @@ class _user extends Resource{ // Klassen ärver egenskaper från den generella k
             $query = "SELECT *
             FROM users
             WHERE user_id = $this->user_id";
-            
+            echo $query;
             $result = mysqli_query($db, $query);
             $user = mysqli_fetch_assoc($result);
             $this->user_name = $user['user_name'];

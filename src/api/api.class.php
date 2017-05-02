@@ -23,8 +23,14 @@ class API{
         parse_str(file_get_contents("php://input"), $input);
         
         // Axios data sent as JSON fix
-        $i = array_keys($input)[0];
-        $input = json_decode($i);
+        if($input){
+            $i = array_keys($input)[0];
+            $input = json_decode($i);
+        }else{
+            $input = json_decode("{}");
+        }
+        
+        
         
         $this->input = $input;
         # Get and split the URL of the request into parts
