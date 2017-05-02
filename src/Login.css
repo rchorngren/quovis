@@ -30,11 +30,16 @@
     color: #297d7d;
 }
 
+input.error {
+    background-color: red;
+}
 .error {
     color: #ff3131;
     font-family: 'Roboto', sans-serif;
     text-shadow: 1px 1px 1px #909090;
     transition: 1s;
+    margin-top: 10px;
+    margin-left: 17%;
 }
 
 .username {

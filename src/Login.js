@@ -87,7 +87,7 @@ export default class Login extends Component {
                             <input ref={node => this.inputName = node} className="form-control top"/> <br />
                             <input ref={node => this.inputPassword = node} className="form-control"/><br />
                             <button className="btn btn-success" onClick={this.login}>Logga in</button><br />
-                        </form>
+                        </form><br/>
                         <span className={error}>{errorTxt}</span>
                     </div>
                 </div>
