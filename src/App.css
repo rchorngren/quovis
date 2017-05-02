@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 .linkies{
     margin: 0;
@@ -19,26 +18,4 @@ h3{
 .signin {
     margin-left: 83%;
     color:#449b45;
-=======
-
-.linkies{
-    margin: 0;
-    margin-top: 4%;
-    margin-left: 10%;
-    color: #666866;
-}
-
-.hr{
-    width: 81%;
-    margin-top: 2.5%;
-}
-h3{
-    margin-left: 10%;
-    margin-top: 10px;
-    margin-bottom: -25px;
-}
-.signin {
-    margin-left: 83%;
-    color:#449b45;
->>>>>>> 6f3a7eb7b3010c12833528c3b8b3b8cd1646b78f
 }
