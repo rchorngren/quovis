@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 import axios from 'axios';
 import './Home.css';
@@ -22,7 +23,6 @@ export default class Home extends Component {
                      Excepteur sint occaecat cupidatat non proident, sunt in
                      culpa qui officia deserunt mollit anim id est laborum."
                       nostrud exercitation ullamco laboris nisi ut aliquip"</p>
-
                     <img src={require("./testp.png")} className="startimg" />
                 </div>
                 <div className="col-xs-6">
@@ -35,4 +35,3 @@ export default class Home extends Component {
         );
     }
 }
-

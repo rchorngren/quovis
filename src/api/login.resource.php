@@ -16,16 +16,21 @@ class _login extends Resource{ // Klassen ärver egenskaper från den generella 
     }
     
     function GET($input, $db){
+        
         $this->user_id = $_SESSION['login_user'];
+        
     }
     
     # Denna funktion körs om vi anropat resursen genom HTTP-metoden POST
     function POST($input, $db){
+        
+        
         # I denna funktion skapar vi en ny user med den input vi fått
         /* if(isset($input['user_name'], $input['user_password'])){*/
         $user_name = escape($input->user_name);
+        
         $user_password = escape($input->user_password);
-        /*$logout = escape($input->logout);*/
+        
         
         
         
@@ -40,11 +45,16 @@ class _login extends Resource{ // Klassen ärver egenskaper från den generella 
             $_SESSION['login_user'] = $user['user_id']; //sets the key to login_user and the value to $user_id
             $this->user_name = $user['user_name'];
             $this->user_id = $user['user_id'];
+            
         } else {
             
         }
+        /* if(isset($input->logout)){
+        $logout = escape($input->logout);
+        if($logout) $v = session_destroy();
+        echo $v;
+        }*/
         
-        /* if($logout) session_destroy();*/
         
         /*$result =
         $user = mysqli_fetch_assoc($result);
@@ -56,4 +66,11 @@ class _login extends Resource{ // Klassen ärver egenskaper från den generella 
         echo 'no resource given';
         }*/
     }
+    
+    function DELETE(){
+        session_destroy();
+        if(isset( $_SESSION['login_user'] ))
+        echo "nått gick fel";
+    }
+    
 }
