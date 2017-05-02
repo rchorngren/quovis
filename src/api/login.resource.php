@@ -72,4 +72,5 @@ class _login extends Resource{ // Klassen ärver egenskaper från den generella 
         if(isset( $_SESSION['login_user'] ))
         echo "nått gick fel";
     }
+    
 }

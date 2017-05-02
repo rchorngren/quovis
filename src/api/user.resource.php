@@ -101,4 +101,5 @@ class _user extends Resource{ // Klassen ärver egenskaper från den generella k
             echo "No resource given";
         }
     }
+    
 }

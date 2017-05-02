@@ -1,4 +1,7 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 'On');
+
 session_start();
 #
 # Det här är indexfilen som hela API:et utgår från
