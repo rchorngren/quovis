@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .login-background {
     position: fixed;
     z-index: 1;
@@ -68,4 +69,81 @@ h2 {
 .newA{
     margin-left: 35%;
     cursor: pointer;
+=======
+.login-background {
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    transition: 0.8s;
+}
+
+.login-btn {
+    color: #91c46c;
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    float:right;
+    margin-right: 1%;
+}
+
+.login-btn:focus {
+    outline: 0;
+}
+
+.login-btn:hover {
+    color: #297d7d;
+}
+
+input.error {
+    background-color: red;
+}
+.error {
+    color: #ff3131;
+    font-family: 'Roboto', sans-serif;
+    text-shadow: 1px 1px 1px #909090;
+    transition: 1s;
+    margin-top: 10px;
+    margin-left: 17%;
+}
+
+.username {
+    color: #91c46c;
+}
+.login-container{
+    height: 400px;
+    width: 400px;
+    margin: 0 auto;    
+}
+input {
+    margin: 0 auto;
+}
+input.form-control{
+    width: 50%;
+}
+.btn.btn-success {
+    margin-left: 25.5%;
+    width:187px; 
+}
+.btn.btn-danger{
+    margin-right: 3%;
+    margin-top:2%;
+}
+input.form-control.top{
+    margin-top: 5%;
+}
+h2 {
+    text-align: center;
+}
+.newA{
+    margin-left: 35%;
+    cursor: pointer;
+>>>>>>> 6f3a7eb7b3010c12833528c3b8b3b8cd1646b78f
 }
