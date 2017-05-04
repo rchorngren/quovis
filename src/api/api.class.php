@@ -23,6 +23,7 @@ class API{
         parse_str(file_get_contents("php://input"), $input);
         
         // Axios data sent as JSON fix
+        
         if($input){
             $i = array_keys($input)[0];
             $input = json_decode($i);

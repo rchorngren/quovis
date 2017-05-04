@@ -24,16 +24,16 @@ export default class Register extends Component {
         e.preventDefault();
         var username = this.inputName.value;
         var password = this.inputPassword.value;
-        var mail = this.inputEmail.value;
-        axios.post(
-            'http://localhost/quovis/src/api/?/user',
+        var email = this.inputEmail.value;
+        axios.post('http://localhost/quovis/src/api/?/user',
             {
                 user_name: username,
-                user_password: password
+                user_password: password,
+                user_email: email
             }
         ).then((response) => {
             console.log(response.data);
-            
+
         });
 
     }
@@ -48,10 +48,10 @@ export default class Register extends Component {
                         <form action="">
                             <button className="btn btn-danger" onClick={this.displayRegister}>x</button>
                             <h2>Ny användare</h2>
-                            <input ref={node => this.inputName = node} placeholder="Användarnamn" className="form-control top" /><br/>
-                            <input ref={node => this.inputPassword = node} placeholder="Lösenord" className="form-control"/><br/>
+                            <input ref={node => this.inputName = node} placeholder="Användarnamn" className="form-control top" /><br />
+                            <input ref={node => this.inputPassword = node} placeholder="Lösenord" className="form-control" /><br />
                             {/*<input ref={node => this.inputConfirmPass = node} placeholder="Bekräfta lösenord"/><br/>*/}
-                            <input ref={node => this.inputMail = node} placeholder="E-mailadress" className="form-control"/><br/>
+                            <input ref={node => this.inputEmail = node} placeholder="E-mailadress" className="form-control" /><br />
                             <button className="btn btn-success" onClick={this.register}>Registrera ny användare</button>
                         </form>
                     </div>
