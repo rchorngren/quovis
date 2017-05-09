@@ -1,8 +1,11 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
-
-session_start();
+session_name('token');
+if(isset($_GET['token'])){
+    session_id($_GET['token']);
+}
+session_start(['use_cookies' => 0, 'use_trans_sid' => 1]);
 #
 # Det här är indexfilen som hela API:et utgår från
 

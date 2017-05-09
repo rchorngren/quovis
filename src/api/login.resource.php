@@ -45,7 +45,7 @@ class _login extends Resource{ // Klassen ärver egenskaper från den generella 
             $_SESSION['login_user'] = $user['user_id']; //sets the key to login_user and the value to $user_id
             $this->user_name = $user['user_name'];
             $this->user_id = $user['user_id'];
-            
+            $this->session = session_id();
         } else {
             
         }
