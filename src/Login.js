@@ -85,7 +85,6 @@ export default class Login extends Component {
             <div>
                 {sessionBtn}
                 {/*<button className='login-btn' onClick={this.displayLogin}>Logga in</button>*/}
-                <button onClick={this.checkLogin}>kolla login</button>
                 <div className='username'>{this.state.showUser}</div>
                 <div className='login-background' style={style}>
                     <div className='login-container form-control' style={style}>
@@ -95,7 +94,6 @@ export default class Login extends Component {
                             <input ref={node => this.inputName = node} className="form-control top"/> <br />
                             <input ref={node => this.inputPassword = node} className="form-control"/><br />
                             <button className="btn btn-success" onClick={this.login}><Link to="/user"> Logga in</Link></button><br />
-
                         </form>
                         <span className={error}>{errorTxt}</span>
                     </div>
