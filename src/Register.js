@@ -24,16 +24,17 @@ export default class Register extends Component {
         e.preventDefault();
         var username = this.inputName.value;
         var password = this.inputPassword.value;
-        var mail = this.inputEmail.value;
+        var email = this.inputeMail.value;
         axios.post(
             'http://localhost/quovis/src/api/?/user',
             {
                 user_name: username,
-                user_password: password
+                user_password: password,
+                user_email: email
             }
         ).then((response) => {
             console.log(response.data);
-            
+
         });
 
     }
@@ -51,7 +52,7 @@ export default class Register extends Component {
                             <input ref={node => this.inputName = node} placeholder="Användarnamn" className="form-control top" /><br/>
                             <input ref={node => this.inputPassword = node} placeholder="Lösenord" className="form-control"/><br/>
                             {/*<input ref={node => this.inputConfirmPass = node} placeholder="Bekräfta lösenord"/><br/>*/}
-                            <input ref={node => this.inputMail = node} placeholder="E-mailadress" className="form-control"/><br/>
+                            <input ref={node => this.inputeMail = node} placeholder="E-mailadress" className="form-control"/><br/>
                             <button className="btn btn-success" onClick={this.register}>Registrera ny användare</button>
                         </form>
                     </div>
