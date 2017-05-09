@@ -24,8 +24,10 @@ export default class Register extends Component {
         e.preventDefault();
         var username = this.inputName.value;
         var password = this.inputPassword.value;
+
         var email = this.inputEmail.value;
         axios.post('http://localhost/quovis/src/api/?/user',
+
             {
                 user_name: username,
                 user_password: password,
