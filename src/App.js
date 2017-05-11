@@ -27,8 +27,8 @@ export default class App extends Component {
                   <li><Link to="/asdf">Bad link</Link></li>
                 </ul>
                 <ul className="nav navbar-nav navbar-right">
-                  <Login />
-                  <Register />
+                  <li><Login /></li>
+                  <li><Register /></li>
               </ul>
               </div>
             </div>
