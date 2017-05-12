@@ -8,23 +8,54 @@ import Register from './Register.js';
 
 
 export default class App extends Component {
+  constructor(props) {
+      super(props);
+
+      this.state = {
+      hidemenu: false
+      };
+      this.scrollMenu = this.scrollMenu.bind(this);
+      }
+
+      scrollMenu() {
+      let { hidemenu } = this.state;
+      window.scrollY > this.prev ?
+      !hidemenu && this.setState({ hidemenu: true })
+      :
+      hidemenu && this.setState({ hidemenu: false })
+
+      this.prev = window.scrollY;
+
+      }
+      componentDidMount() {
+      window.addEventListener('scroll', this.scrollMenu);
+      }
+      componentWillUnmount() {
+      window.removeEventListener('scroll', this.scrollMenu);
+      }
 
   render() {
+    var hide = this.state.hidemenu ? 'navbar-close' : '';
 
     return (
-      <div>
-        <h3>Quovis</h3>
-        <Login />
-        <Register />
-
-        <hr className="hr" />
-        <div className="navbar">
-          <Link to="/" className="linkies">Hem</Link>
-          <Link to="/contact" className="linkies">Kontakt</Link>
-          <Link to="/asdf" className="linkies">Bad link</Link>
-          <hr />
+      <div>        
+        <div className={'navbar-show ' + hide}>
+          <div className="navbar navbar-default">
+          <div className="container-fluid">
+           <div class="navbar-header">
+            <ul className="nav navbar-nav">
+              <li><Link to="/" className="linkies">Hem</Link></li>
+              <li><Link to="/contact" className="linkies">Kontakt</Link></li>
+              <li><Link to="/asdf" className="linkies">Bad link</Link></li>
+            </ul>
+            <Login />
+            <Register />
+          </div>
+          </div>
+        </div>
         </div>
         {this.props.children}
+        
       </div>
     );
   };

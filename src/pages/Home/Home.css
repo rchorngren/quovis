@@ -3,25 +3,31 @@
     margin-top: 70px;
     float:left;
 }
+
 .startimg {
-    width: 450px;
-    height: 300px;
-    margin-top: -4%;
+    width: 400px;
+    height: 250px;
 }
+
 .headline {
-    margin-top: 30px;
+    margin-top: 6%;
 }
+
 h2{
     margin-left: 20px;
     color: #4a4c4a;
 }
-.col-xs-6 {
+.col-xs-6.start {
     float:right;
+    margin-top: 6%;
 }
+
 .popc, .pop{
     margin-left: 10%;
     margin-bottom: 2%;
 }
-.col-xs-6.start {
-    
+
+.col-xs-6{
+        margin-top: 10%;
+
 }
