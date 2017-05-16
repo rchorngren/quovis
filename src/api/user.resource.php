@@ -64,7 +64,7 @@ class _user extends Resource{ // Klassen ärver egenskaper från den generella k
     # Denna funktion körs om vi anropat resursen genom HTTP-metoden POST
     function POST($input, $db){
         # I denna funktion skapar vi en ny user med den input vi fått
-        var_dump ($input);
+        
         $user_name = ($input->user_name);
         $user_password = ($input->user_password);
 
