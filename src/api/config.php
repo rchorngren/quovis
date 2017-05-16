@@ -5,6 +5,6 @@ header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE');
 header('Content-Type: application/json');
 
 
-$db = mysqli_connect('localhost', 'root', '', 'quovis');
+$db = mysqli_connect('localhost', 'root', 'root', 'quovis');
 mysqli_query($db, "SET NAMES utf8");
 

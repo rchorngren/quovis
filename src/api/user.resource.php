@@ -1,22 +1,12 @@
 <?php
 
-function fix($source) {
-    $source = preg_replace_callback(
-        '/(^|(?<=&))[^=[&]+/',
-        function($key) { return bin2hex(urldecode($key[0])); },
-        $source
-    );
-
-    parse_str($source, $post);
-    return array_combine(array_map('hex2bin', array_keys($post)), $post);
-}
-
 #
 # Den här klassen ska köras om vi anropat resursen user i vårt API genom /?/user
 #
 class _user extends Resource{ // Klassen ärver egenskaper från den generella klassen Resource som finns i resource.class.php
     # Här deklareras de variabler/members som objektet ska ha
     public $user_name, $user_id, $user_email, $user_password, $users, $request;
+    #var_dump($user_name, $user_id, $user_email, $user_password);
     # Här skapas konstruktorn som körs när objektet skapas
     function __construct($resource_id, $request){
         
@@ -57,7 +47,7 @@ class _user extends Resource{ // Klassen ärver egenskaper från den generella k
             $user = mysqli_fetch_assoc($result);
             $this->user_name = $user['user_name'];
             $this->user_password = $user['user_password'];
-            $this->user_email = $user['user_email'];
+            #$this->user_email = $user['user_email'];
             
         }else{ // om vår URL inte innehåller ett ID hämtas alla users
             $query = "SELECT *
@@ -74,10 +64,11 @@ class _user extends Resource{ // Klassen ärver egenskaper från den generella k
     # Denna funktion körs om vi anropat resursen genom HTTP-metoden POST
     function POST($input, $db){
         # I denna funktion skapar vi en ny user med den input vi fått
-        $user_name = escape($input->user_name);
-        $user_password = escape($input->user_password);
+        var_dump ($input);
+        $user_name = ($input->user_name);
+        $user_password = ($input->user_password);
 
-        $naughty_user_email = escape($input->user_email);
+        $naughty_user_email = ($input->user_email);
         $bad_ending = array("_com", "_se", "_net", "_org", "_gov", "_eu");
         $happy_ending   = array(".com", ".se", ".net", ".org", ".gov", ".eu");
         $user_email = str_replace($bad_ending, $happy_ending, $naughty_user_email);
@@ -97,9 +88,9 @@ class _user extends Resource{ // Klassen ärver egenskaper från den generella k
         # I denna funktion uppdateras en specifik user med den input vi fått
         # Observera att allt uppdaterad varje gång och att denna borde byggas om så att bara det vi skickar med uppdateras
         if($this->user_id){
-            $user_name = escape($input->user_name);
-            $user_password = escape($input->user_password);
-            $user_email = escape($input->user_email);
+            $user_name = ($input->user_name);
+            $user_password = ($input->user_password);
+            $user_email = ($input->user_email);
             
             $query = "
             UPDATE users
