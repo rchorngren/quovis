@@ -1,21 +1,32 @@
 
 .linkies{
-    margin: 0;
-    margin-top: 4%;
-    margin-left: 10%;
+    margin-left: 80px;
+    margin-top: 40px;
     color: #666866;
 }
 
-.hr{
-    width: 81%;
-    margin-top: 2.3%;
-}
-h3{
-    margin-left: 10%;
-    margin-top: 10px;
-    margin-bottom: -25px;
-}
 .signin {
     margin-left: 83%;
     color:#449b45;
+}
+
+.navbar-show {
+    position: fixed;
+    height: 90px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    transition: top 0.7s;
+    z-index: 2;
+    border-color: #f2f2f2;
+}
+
+.navbar-close {
+    top: -100px;
+
+}
+.navbar.navbar-default{
+        background-color: #fff;
+
 }
