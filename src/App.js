@@ -7,34 +7,56 @@ import Register from './Register.js';
 import Headroom from 'react-headroom';  
 
 
+export default class App extends Component {
+  constructor(props) {
+      super(props);
 
-export default class App extends Component {  
+      this.state = {
+      hidemenu: false
+      };
+      this.scrollMenu = this.scrollMenu.bind(this);
+      }
+
+      scrollMenu() {
+      let { hidemenu } = this.state;
+      window.scrollY > this.prev ?
+      !hidemenu && this.setState({ hidemenu: true })
+      :
+      hidemenu && this.setState({ hidemenu: false })
+
+      this.prev = window.scrollY;
+
+      }
+      componentDidMount() {
+      window.addEventListener('scroll', this.scrollMenu);
+      }
+      componentWillUnmount() {
+      window.removeEventListener('scroll', this.scrollMenu);
+      }
 
   render() {
+    var hide = this.state.hidemenu ? 'navbar-close' : '';
 
     return (
-      <div>
-        <Headroom>
-            <nav className="navbar navbar-default" id="nav1">
-            <div className="container-fluid">
-              <div className="navbar-header">
-                <a className="navbar-brand">Quovis</a>
-              </div>
-              <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul className="nav navbar-nav">
-                  <li><Link to="/">Hem</Link></li>
-                  <li><Link to="contact">Kontakt</Link></li>
-                  <li><Link to="/asdf">Bad link</Link></li>
-                </ul>
-                <ul className="nav navbar-nav navbar-right">
-                  <li><Login /></li>
-                  <li><Register /></li>
-              </ul>
-              </div>
-            </div>
-          </nav> 
-          </Headroom>
-          {this.props.children}
+
+      <div>        
+        <div className={'navbar-show ' + hide}>
+          <div className="navbar navbar-default">
+          <div className="container-fluid">
+           <div class="navbar-header">
+            <ul className="nav navbar-nav">
+              <li><Link to="/" className="linkies">Hem</Link></li>
+              <li><Link to="/contact" className="linkies">Kontakt</Link></li>
+              <li><Link to="/asdf" className="linkies">Bad link</Link></li>
+            </ul>
+            <Login />
+            <Register />
+          </div>
+          </div>
+        </div>
+        </div>
+        {this.props.children}
+        
       </div>
     );
   };

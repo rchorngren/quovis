@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './Login.css';
-import { Link } from 'react-router';
+
+
+var session = "";
 
 
 export default class Login extends Component {
@@ -21,7 +23,7 @@ export default class Login extends Component {
 
 
     checkLogin() {
-        axios.get('http://localhost/quovis/src/api/?/login').then((response) => {
+        axios.get('http://localhost/quovis/src/api/?/login' + session).then((response) => {
             console.log(response.data);
         });
     }
@@ -45,6 +47,7 @@ export default class Login extends Component {
             console.log(response.data);
             console.log(response.data.user_name);
             const username = response.data.user_name;
+            session = "&token=" + response.data.session;
             if (username === null) {
                 this.setState({ loginFail: 'Användarnamnet eller lösenordet är fel' });
                 return;

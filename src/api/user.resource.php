@@ -1,10 +1,22 @@
 <?php
+
+function fix($source) {
+    $source = preg_replace_callback(
+        '/(^|(?<=&))[^=[&]+/',
+        function($key) { return bin2hex(urldecode($key[0])); },
+        $source
+    );
+
+    parse_str($source, $post);
+    return array_combine(array_map('hex2bin', array_keys($post)), $post);
+}
+
 #
 # Den här klassen ska köras om vi anropat resursen user i vårt API genom /?/user
 #
 class _user extends Resource{ // Klassen ärver egenskaper från den generella klassen Resource som finns i resource.class.php
     # Här deklareras de variabler/members som objektet ska ha
-    public $user_name, $user_id, $user_password, $users, $request;
+    public $user_name, $user_id, $user_email, $user_password, $users, $request;
     # Här skapas konstruktorn som körs när objektet skapas
     function __construct($resource_id, $request){
         
@@ -45,6 +57,7 @@ class _user extends Resource{ // Klassen ärver egenskaper från den generella k
             $user = mysqli_fetch_assoc($result);
             $this->user_name = $user['user_name'];
             $this->user_password = $user['user_password'];
+            $this->user_email = $user['user_email'];
             
         }else{ // om vår URL inte innehåller ett ID hämtas alla users
             $query = "SELECT *
@@ -63,12 +76,21 @@ class _user extends Resource{ // Klassen ärver egenskaper från den generella k
         # I denna funktion skapar vi en ny user med den input vi fått
         $user_name = escape($input->user_name);
         $user_password = escape($input->user_password);
-        
+
+        $naughty_user_email = escape($input->user_email);
+        $bad_ending = array("_com", "_se", "_net", "_org", "_gov", "_eu");
+        $happy_ending   = array(".com", ".se", ".net", ".org", ".gov", ".eu");
+        $user_email = str_replace($bad_ending, $happy_ending, $naughty_user_email);
+
         $query = "INSERT INTO users
-        (user_name, user_password)
-        VALUES ('$user_name', '$user_password')";
+        (user_name, user_password, user_email)
+        VALUES ('$user_name', '$user_password', '$user_email')";
         
-        mysqli_query($db, $query);
+        if(mysqli_query($db, $query)) {
+            $this->user_name = $user_name;
+            $this->user_password = $user_password;
+            $this->user_email = $user_email;
+        }
     }
     # Denna funktion körs om vi anropat resursen genom HTTP-metoden PUT
     function PUT($input, $db){
@@ -77,10 +99,11 @@ class _user extends Resource{ // Klassen ärver egenskaper från den generella k
         if($this->user_id){
             $user_name = escape($input->user_name);
             $user_password = escape($input->user_password);
+            $user_email = escape($input->user_email);
             
             $query = "
             UPDATE users
-            SET user_name = '$user_name', user_password = '$user_password'
+            SET user_name = '$user_name', user_password = '$user_password', 'user_email = '$user_email'
             WHERE user_id = $this->user_id
             ";
             mysqli_query($db, $query);
@@ -103,3 +126,4 @@ class _user extends Resource{ // Klassen ärver egenskaper från den generella k
     }
     
 }
+

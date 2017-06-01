@@ -4,38 +4,31 @@
     float:left;
     margin-right: 5%; 
 }
+
 .startimg {
-    width: 450px;
-    height: 300px;
-    margin-top: -4%;
-    margin-bottom: 5%;
+    width: 400px;
+    height: 250px;
 }
+
 .headline {
-    margin-top: 12px;
+    margin-top: 6%;
 }
+
 h2{
     margin-left: 20px;
     color: #4a4c4a;
 }
-.col-xs-6 {
+.col-xs-6.start {
     float:right;
+    margin-top: 6%;
 }
+
 .popc, .pop{
     margin-left: 10%;
     margin-bottom: 2%;
 }
 
-.ad1, .ad3{
-    width: 100%;
-    height: 350px;
-    background-color: #f2f2f2;
-}
-.ad2{
-    width: 100%;
-    height: 350px;
-    background-color: #fff;
-}
+.col-xs-6{
+        margin-top: 10%;
 
-.wrapper {
-    margin-top: 6%;
 }

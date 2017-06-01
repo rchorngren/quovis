@@ -1,16 +1,31 @@
 
-.navbar-default .navbar-brand{
-    color:#4f4d4d;
-    margin-left: 150px;
-    margin-top: 10px;
+.linkies{
+    margin-left: 80px;
+    margin-top: 40px;
+    color: #666866;
 }
-.navbar-default{
-    margin-bottom: 25%;
+
+.signin {
+    margin-left: 83%;
+    color:#449b45;
+}
+
+.navbar-show {
+    position: fixed;
+    height: 90px;
+    left: 0;
+    top: 0;
+    width: 100%;
     background-color: #fff;
-    border-color: #eaeaea;
-    height: 70px;
+    transition: top 0.7s;
+    z-index: 2;
+    border-color: #f2f2f2;
 }
-li{
-    margin-left: 10px;
-    margin-top: 10px;
+
+.navbar-close {
+    top: -100px;
+
+}
+.navbar.navbar-default{
+        background-color: #fff;
 }
