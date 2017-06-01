@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './Login.css';
 
-
 var session = "";
 
 
@@ -94,9 +93,9 @@ export default class Login extends Component {
                         <form action="">
                             <button className="btn btn-danger" onClick={this.displayLogin}>x</button>
                             <h2>Logga in</h2>
-                            <input ref={node => this.inputName = node} className="form-control top"/> <br />
-                            <input ref={node => this.inputPassword = node} className="form-control"/><br />
-                            <button className="btn btn-success" onClick={this.login}><Link to="/user"> Logga in</Link></button><br />
+                            <input ref={node => this.inputName = node} className="form-control top" /> <br />
+                            <input ref={node => this.inputPassword = node} className="form-control" /><br />
+                            <button className="btn btn-success" onClick={this.login}>Logga in</button><br />
                         </form>
                         <span className={error}>{errorTxt}</span>
                     </div>
