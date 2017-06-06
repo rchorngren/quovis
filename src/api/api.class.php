@@ -20,16 +20,8 @@ class API{
         # Get the input data for POST, PUT and DELETE request
             $input = [];
         // echo $_SERVER['QUERY_STRING'];
-        parse_str(file_get_contents("php://input"), $input);
         
-        // Axios data sent as JSON fix
-        
-        if($input){
-            $i = array_keys($input)[0];
-            $input = json_decode($i);
-        }else{
-            $input = json_decode("{}");
-        }
+        $input = json_decode(file_get_contents("php://input"));
         
         
         

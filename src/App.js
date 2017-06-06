@@ -9,6 +9,7 @@ import Register from './Register.js';
 
 export default class App extends Component {
   constructor(props) {
+
     super(props);
 
     this.state = {
@@ -18,17 +19,18 @@ export default class App extends Component {
   }
 
   scrollMenu() {
+    let { hidemenu } = this.state;
     window.scrollY > this.prev ?
-      this.setState({ hidemenu: true }) :
-      this.setState({ hidemenu: false })
+      !hidemenu && this.setState({ hidemenu: true })
+      :
+      hidemenu && this.setState({ hidemenu: false })
 
     this.prev = window.scrollY;
-  }
 
+  }
   componentDidMount() {
     window.addEventListener('scroll', this.scrollMenu);
   }
-
   componentWillUnmount() {
     window.removeEventListener('scroll', this.scrollMenu);
   }
@@ -36,20 +38,25 @@ export default class App extends Component {
   render() {
     var hide = this.state.hidemenu ? 'navbar-close' : '';
 
-
     return (
       <div>
-        <h3>Quovis</h3>
-        <Login />
-        <Register />
-        <hr className="hr" />
         <div className={'navbar-show ' + hide}>
-          <Link to="/" className="linkies">Hem</Link>
-          <Link to="/contact" className="linkies">Kontakt</Link>
-          <Link to="/asdf" className="linkies">Bad link</Link>
-          <hr />
+          <div className="navbar navbar-default">
+            <div className="container-fluid">
+              <div class="navbar-header">
+                <ul className="nav navbar-nav">
+                  <li><Link to="/" className="linkies">Hem</Link></li>
+                  <li><Link to="/contact" className="linkies">Kontakt</Link></li>
+                  <li><Link to="/asdf" className="linkies">Bad link</Link></li>
+                </ul>
+                <Login />
+                <Register />
+              </div>
+            </div>
+          </div>
         </div>
         {this.props.children}
+
       </div>
     );
   };
