@@ -43,7 +43,7 @@ export default class App extends Component {
         <div className={'navbar-show ' + hide}>
           <div className="navbar navbar-default">
             <div className="container-fluid">
-              <div class="navbar-header">
+              <div className="navbar-header">
                 <ul className="nav navbar-nav">
                   <li><Link to="/" className="linkies">Hem</Link></li>
                   <li><Link to="/contact" className="linkies">Kontakt</Link></li>
