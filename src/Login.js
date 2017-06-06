@@ -4,7 +4,6 @@ import './Login.css';
 
 var session = "";
 
-
 export default class Login extends Component {
     constructor(props) {
         super(props)
@@ -22,6 +21,8 @@ export default class Login extends Component {
 
 
     checkLogin() {
+        console.log(session);
+
         axios.get('http://localhost/quovis/src/api/?/login' + session).then((response) => {
             console.log(response.data);
         });
@@ -62,10 +63,11 @@ export default class Login extends Component {
 
     logout(e) {
         e.preventDefault();
-        axios.post('http://localhost/quovis/src/api/?/login', {
+        axios.delete('http://localhost/quovis/src/api/?/login', {
             logout: true
         }).then((response) => {
-            console.log(response.data);
+            session = "&token=" + response.data.session;
+            console.log(session);
             this.setState({
                 loggedIn: !this.state.loggedIn,
                 showUser: ''

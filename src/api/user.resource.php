@@ -85,8 +85,7 @@ class _user extends Resource{ // Klassen ärver egenskaper från den generella k
             $user_password = escape($input->user_password);
             $user_email = escape($input->user_email);
             
-            $query = "
-            UPDATE users
+            $query = "UPDATE users
             SET user_name = '$user_name', user_password = '$user_password'
             WHERE user_id = $this->user_id
             ";
