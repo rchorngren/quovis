@@ -1,12 +1,12 @@
 
 .starttext{
-    margin-top: 70px;
+    margin-top: 6%;
     float:left;
 }
 
 .startimg {
-    width: 400px;
-    height: 250px;
+    width: 60%;
+    height: 45%;
 }
 
 .headline {
@@ -19,7 +19,7 @@ h2{
 }
 .col-xs-6.start {
     float:right;
-    margin-top: 6%;
+    margin-top: 4%;
 }
 
 .popc, .pop{
@@ -28,6 +28,5 @@ h2{
 }
 
 .col-xs-6{
-        margin-top: 10%;
-
+     margin-top: 4%;
 }

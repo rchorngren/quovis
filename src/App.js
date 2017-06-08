@@ -46,17 +46,17 @@ export default class App extends Component {
               <div className="navbar-header">
                 <ul className="nav navbar-nav">
                   <li><Link to="/" className="linkies">Hem</Link></li>
-                  <li><Link to="/contact" className="linkies">Kontakt</Link></li>
+                  <li><Link to="/contact" className="linkies">Om Quovis</Link></li>
                   <li><Link to="/asdf" className="linkies">Bad link</Link></li>
                 </ul>
-                <Login />
-                <Register />
+                <div className="links"><Login /></div>
+                <div className="links"><Register /></div>
               </div>
             </div>
           </div>
         </div>
         {this.props.children}
-
+        
       </div>
     );
   };

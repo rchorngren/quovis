@@ -1,0 +1,17 @@
+.hej{
+    margin-top: 100px;
+    text-align: center;
+}
+.hej p{
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 1%;
+}
+@media (max-width:767px) { 
+    .hej {
+       margin-top: 200px;   
+    }
+}
+.img-responsive{
+    margin: 0 auto;
+}
