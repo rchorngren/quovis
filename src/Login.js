@@ -96,7 +96,7 @@ export default class Login extends Component {
                             <button className="btn btn-danger" onClick={this.displayLogin}>x</button>
                             <h2>Logga in</h2>
                             <input ref={node => this.inputName = node} className="form-control top" /> <br />
-                            <input ref={node => this.inputPassword = node} className="form-control" /><br />
+                            <input ref={node => this.inputPassword = node} className="form-control" type="password"/><br />
                             <button className="btn btn-success" onClick={this.login}>Logga in</button><br />
                         </form>
                         <span className={error}>{errorTxt}</span>
