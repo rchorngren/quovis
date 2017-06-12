@@ -1,4 +1,6 @@
-
+.press{
+    height: 60px;
+}
 .starttext{
     margin-top: 6%;
     float:left;
@@ -31,6 +33,7 @@ h2{
      margin-top: 4%;
      margin-bottom: 3%;
 }
+
 /* G R I D */
 
 .col-12.specific-class{
