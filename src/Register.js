@@ -36,6 +36,7 @@ export default class Register extends Component {
             }
         ).then((response) => {
             console.log(response.data);
+            this.setState({ showRegister: false });
 
         });
 
