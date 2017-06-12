@@ -16,16 +16,6 @@ export default class Login extends Component {
         this.login = this.login.bind(this);
         this.displayLogin = this.displayLogin.bind(this);
         this.logout = this.logout.bind(this);
-        this.checkLogin = this.checkLogin.bind(this);
-    }
-
-
-    checkLogin() {
-        console.log(session);
-
-        axios.get('http://localhost/quovis/src/api/?/login' + session).then((response) => {
-            console.log(response.data);
-        });
     }
 
     displayLogin(e) {
@@ -44,18 +34,18 @@ export default class Login extends Component {
                 user_password: password
             }
         ).then((response) => {
-            console.log(response.data);
-            console.log(response.data.user_name);
             const username = response.data.user_name;
             session = "&token=" + response.data.session;
             if (username === null) {
                 this.setState({ loginFail: 'Användarnamnet eller lösenordet är fel' });
                 return;
             } else {
+                sessionStorage.setItem('token', response.data.session);
+                sessionStorage.setItem('username', response.data.user_name);
                 this.setState({
                     showUser: `Hej ${response.data.user_name}`,
                     showLogin: !this.state.showLogin,
-                    loggedIn: !this.state.loggedIn
+                    loggedIn: !this.state.loggedIn,
                 });
             }
         });
@@ -67,10 +57,12 @@ export default class Login extends Component {
             logout: true
         }).then((response) => {
             session = "&token=" + response.data.session;
+            sessionStorage.clear();
             console.log(session);
             this.setState({
                 loggedIn: !this.state.loggedIn,
-                showUser: ''
+                showUser: '',
+                storage: null
             });
         });
     }
@@ -80,7 +72,9 @@ export default class Login extends Component {
         var style = { display: display };
         var errorTxt = this.state.loginFail;
         var error = this.state.loginFail ? 'error' : '';
-        var sessionBtn = this.state.loggedIn ?
+        const activeSession = window.sessionStorage.getItem('token');
+        const activeUsername = window.sessionStorage.getItem('username');
+        var sessionBtn = activeSession ?
             (<button className='login-btn' onClick={this.logout}>Logga ut</button>) :
             (<button className='login-btn' onClick={this.displayLogin}>Logga in</button>);
 
@@ -88,8 +82,7 @@ export default class Login extends Component {
         return (
             <div>
                 {sessionBtn}
-                {/*<button className='login-btn' onClick={this.displayLogin}>Logga in</button>*/}
-                <div className='username'>{this.state.showUser}</div>
+                <div className='username'>{activeUsername}</div>
                 <div className='login-background' style={style}>
                     <div className='login-container form-control' style={style}>
                         <form action="">

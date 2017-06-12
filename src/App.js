@@ -6,7 +6,8 @@ import Login from './Login.js';
 import Register from './Register.js';
 
 
-
+var storedSess = sessionStorage.getItem('token');
+console.log(sessionStorage);
 export default class App extends Component {
   constructor(props) {
 
@@ -14,8 +15,11 @@ export default class App extends Component {
 
     this.state = {
       hidemenu: false
+
     };
     this.scrollMenu = this.scrollMenu.bind(this);
+
+
   }
 
   scrollMenu() {
@@ -28,6 +32,7 @@ export default class App extends Component {
     this.prev = window.scrollY;
 
   }
+
   componentDidMount() {
     window.addEventListener('scroll', this.scrollMenu);
   }
@@ -37,6 +42,7 @@ export default class App extends Component {
 
   render() {
     var hide = this.state.hidemenu ? 'navbar-close' : '';
+
 
     return (
       <div>
