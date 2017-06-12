@@ -47,7 +47,7 @@ export default class App extends Component {
                 <ul className="nav navbar-nav">
                   <li><Link to="/" className="linkies">Hem</Link></li>
                   <li><Link to="/contact" className="linkies">Om Quovis</Link></li>
-                  <li><Link to="/asdf" className="linkies">Bad link</Link></li>
+                  <li><Link to="/mypage" className="linkies">Mina Sidor</Link></li>
                 </ul>
                 <div className="links"><Login /></div>
                 <div className="links"><Register /></div>

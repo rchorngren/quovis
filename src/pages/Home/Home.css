@@ -29,4 +29,74 @@ h2{
 
 .col-xs-6{
      margin-top: 4%;
+     margin-bottom: 3%;
+}
+/* G R I D */
+
+.col-12.specific-class{
+    margin-bottom: 50px;
+}
+
+.specific-class .td {
+    width: 50%;
+    background: #f7f7f7;
+}
+.t { 
+    display: table; 
+    height: 100%; 
+    width: 100%;
+}
+.td { 
+    display: table-cell; 
+    vertical-align: middle; 
+    height: 100%; 
+}
+
+.img3 { 
+    vertical-align: top; 
+    margin-left: 20px;
+    
+}
+/***************  3     I M A G E S **********************/
+
+.post
+{
+    background-color: #FFF;
+    overflow: hidden;
+    box-shadow: 0 0 1px #CCC;
+}
+
+.post .content
+{
+    padding: 15px;
+}
+
+.post .post-img-content
+{
+    height: 196px;
+    position: relative;
+}
+.post .post-img-content img
+{
+    position: absolute;
+}
+.post .post-title
+{
+    display: table-cell;
+    vertical-align: bottom;
+    z-index: 2;
+    position: relative;
+}
+.post .post-title b
+{
+    background-color: rgba(51, 51, 51, 0.58);
+    display: inline-block;
+    margin-bottom: 5px;
+    color: #FFF;
+    padding: 10px 15px;
+    margin-top: 5px;
+}
+.container.one{
+    margin-top: 80px;
+    margin-bottom: 80px;
 }
