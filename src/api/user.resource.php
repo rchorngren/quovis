@@ -68,8 +68,8 @@ class _user extends Resource{ // Klassen ärver egenskaper från den generella k
         $user_name = ($input->user_name);
         $user_password = ($input->user_password);
 
-        $salt = 'MinFörstaRiktigaHemsidaMedSäkerhet!84';
-        $user_password = crypt($user_password, $salt);
+        $NaCl = 'MinFörstaRiktigaHemsidaMedSäkerhet!84';
+        $user_password = crypt($user_password, $NaCl);
         
         $query = "INSERT INTO users
         (user_name, user_password, user_email)
