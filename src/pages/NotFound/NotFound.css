@@ -1,8 +1,9 @@
-.container1{
+.container1 {
     text-align: center;
+    margin-top: 90px;
 }
-.mypageul {
 
+.mypageul {
     list-style-type: none;
     padding: 0;
     overflow: hidden;
@@ -11,8 +12,9 @@
     margin: 0 auto;
     margin-top: 20px;
 }
-li{
-    display: inline;    
+
+li {
+    display: inline;
     text-align: center;
 }
 
@@ -24,37 +26,46 @@ li a {
     text-decoration: none;
 }
 
+
 /* Change the link color to #111 (black) on hover */
+
 li a:hover {
     background-color: #918e8e;
     list-style-type: none;
     text-decoration: none;
     color: #000;
 }
-.video{
+
+.video {
     margin-left: 95px;
     margin-top: -10px;
 }
-.active{
-    background-color:#918e8e;
+
+.active {
+    background-color: #918e8e;
     color: #000;
-    border: #918e8e; 
+    border: #918e8e;
 }
-.container2{
+
+.container2 {
     float: left;
 }
-.container3{
+
+.container3 {
     float: right;
     margin-right: 95px;
     margin-top: 40px;
 }
-.ptag{
+
+.ptag {
     margin-top: 40px;
     margin-right: 90px;
 }
-.quiz{
+
+.quiz {
     margin-top: -5px;
 }
-.wi{
+
+.wi {
     margin-left: -20px;
 }
