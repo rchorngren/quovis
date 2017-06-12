@@ -10,7 +10,7 @@
 }
 
 .navbar-show {
-    position: fixed;
+    position: relative;
     height: 90px;
     left: 0;
     top: 0;
@@ -27,4 +27,32 @@
 
 .navbar.navbar-default {
     background-color: #fff;
+}
+.navbar-header{
+    width: 100%;
+}
+@media (max-width:767px) { 
+    .navbar-default li {
+        float:left;
+        font-size: 14px;
+        margin: -17px;
+		height: 60px;
+    }
+}
+
+@media (max-width:767px) { 
+    .links {
+        float:right;
+        font-size: 14px;
+        margin-top: -3px;
+		height: 50px;
+    }
+}
+@media (max-width:674px) { 
+    .links {
+        margin: 10px;
+        font-size: 14px;
+        margin-top: -40px;
+		height: 70px;
+    }
 }

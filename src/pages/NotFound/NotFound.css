@@ -1,0 +1,60 @@
+.container1{
+    text-align: center;
+}
+.mypageul {
+
+    list-style-type: none;
+    padding: 0;
+    overflow: hidden;
+    background-color: #c1bfbf;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+li{
+    display: inline;    
+    text-align: center;
+}
+
+li a {
+    display: inline;
+    color: #3a3a3a;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #918e8e;
+    list-style-type: none;
+    text-decoration: none;
+    color: #000;
+}
+.video{
+    margin-left: 95px;
+    margin-top: -10px;
+}
+.active{
+    background-color:#918e8e;
+    color: #000;
+    border: #918e8e; 
+}
+.container2{
+    float: left;
+}
+.container3{
+    float: right;
+    margin-right: 95px;
+    margin-top: 40px;
+}
+.ptag{
+    margin-top: 40px;
+    margin-right: 90px;
+}
+.quiz{
+    margin-top: -5px;
+}
+.wi{
+    margin-left: -20px;
+}
