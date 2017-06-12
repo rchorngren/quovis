@@ -10,14 +10,14 @@
 }
 
 .navbar-show {
-    position: relative;
+    position: fixed;
     height: 90px;
     left: 0;
     top: 0;
     width: 100%;
     background-color: #fff;
     transition: top 0.7s;
-    z-index: 2;
+    z-index: 5;
     border-color: #f2f2f2;
 }
 
