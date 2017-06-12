@@ -67,11 +67,9 @@ class _user extends Resource{ // Klassen ärver egenskaper från den generella k
         
         $user_name = ($input->user_name);
         $user_password = ($input->user_password);
-        
-        $naughty_user_email = ($input->user_email);
-        $bad_ending = array("_com", "_se", "_net", "_org", "_gov", "_eu");
-        $happy_ending   = array(".com", ".se", ".net", ".org", ".gov", ".eu");
-        $user_email = str_replace($bad_ending, $happy_ending, $naughty_user_email);
+
+        $salt = 'MinFörstaRiktigaHemsidaMedSäkerhet!84';
+        $user_password = crypt($user_password, $salt);
         
         $query = "INSERT INTO users
         (user_name, user_password, user_email)

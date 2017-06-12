@@ -31,9 +31,9 @@ class _login extends Resource{ // Klassen ärver egenskaper från den generella 
         
         $user_password = escape($input->user_password);
         
-        
-        
-        
+        $salt = 'MinFörstaRiktigaHemsidaMedSäkerhet!84';
+        $user_password = crypt($user_password, $salt);
+                
         $query = "SELECT * FROM users
         WHERE user_name = '$user_name'
         AND user_password = '$user_password'";
